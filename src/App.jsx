@@ -174,14 +174,16 @@ function App() {
     let years = 0;
     let months = 0;
     let days = 0;
+
     fechasModificadas.forEach(fecha => {
       years += fecha.years;
       months += fecha.months;
       days += fecha.days
 
-      if (months >= 12) {
+
+      if (months >= 11) {
         years++;
-        months = months - 12;
+        months = months - 11;
       }
 
       if (days >= 30) {
@@ -190,7 +192,9 @@ function App() {
       }
     });
 
-    return `${years} años, ${months} meses, ${days} dias`;
+    console.log(months);
+
+    return `${years} años, ${months} ${months === 1 ? 'mes' : 'meses'} , ${days} dias`;
   }
 
   const calcFechaSpecific = () => {
@@ -203,9 +207,9 @@ function App() {
       months += fecha.months;
       days += fecha.days
 
-      if (months >= 12) {
+      if (months >= 11) {
         years++;
-        months = months - 12;
+        months = months - 11;
       }
 
       if (days >= 30) {
@@ -213,7 +217,7 @@ function App() {
         days = days - 30;
       }
     });
-    return `${years} años, ${months} meses, ${days} dias`;
+    return `${years} ${years === 1 ? 'año' : 'años'}, ${months} ${months === 1 ? 'mes' : 'meses'} , ${days} ${days === 1 ? 'dia' : 'dias'}`;
   }
 
   const handleCalcDatesGeneral = () => {
