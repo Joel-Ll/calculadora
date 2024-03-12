@@ -3,36 +3,6 @@ export const getDaysInMonth = (year, month) => {
   return lastDayOfMonth;
 }
 
-// export const formatFecha = fecha => {
-//   const options = {
-//     year: 'numeric',
-//     month: 'long',
-//     day: '2-digit'
-//   }
-
-//   console.log( fecha );
-
-//   const startDate = new Date(fecha.startDate);
-//   const endDate = new Date(fecha.endDate);
-
-//   console.log({startDate, endDate });
-
-//   const formatPart = (value, singular, plural) => {
-//     return value > 0 ? `${value} ${value === 1 ? singular : plural}` : null;
-//   };
-
-//   const result = [
-//     formatPart(fecha.years, 'año', 'años'),
-//     fecha.years > 0 && (fecha.months > 0 || fecha.days > 0) ? ',' : '',
-//     formatPart(fecha.months, 'mes', 'meses'),
-//     fecha.months > 0 && fecha.days > 0 ? ',' : '',
-//     formatPart(fecha.days, 'día', 'días'),
-//   ].filter(Boolean).join(' ');
-
-//   return `${result} desde el ${startDate.toLocaleDateString('es-ES', options)} al ${endDate.toLocaleDateString('es-ES', options)}`;
-// }
-
-
 export const formatFecha = fecha => {
   const options = {
     year: 'numeric',
